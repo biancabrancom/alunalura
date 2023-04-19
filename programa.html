@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<h2>IMC</h2>
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calcImc(altura, peso) {
+        return peso / (altura * altura);
+    }
+
+    alert("Bem vindo à Calculadora de IMC!");
+    var nome = prompt("Digite seu nome");
+    alert("Olá " + nome + "! Vamos descobrir seu IMC.");
+
+    var alturaInf = prompt("Primeiro, informe sua altura.");
+    var pesoInf = prompt("Agora, informe seu peso.");
+
+    var imc = calcImc(alturaInf, pesoInf);
+
+    alert(nome + ", seu IMC é " + imc);
+    document.write(nome + ", seu IMC é " + imc);
+    
+</script>

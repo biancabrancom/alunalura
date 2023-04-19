@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+<h2>IMC</h2>
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calcImc(altura, peso) {
+        return peso / (altura * altura);
+    }
+
+    var nmrPensado = Math.round(Math.random() * 10);
+
+    var tentativas = 1;
+
+    while(tentativas <= 3) {
+        
+        var chute = parseInt(prompt("Digite seu chute!"));
+
+        if (chute == nmrPensado) {
+
+            mostra("Parabéns! Você acertou.");
+            break;
+
+        } else {
+
+            mostra("Mais sorte da próxima vez!");
+
+            }
+
+        tentativas++;
+    }    
+
+    mostra("FIM");
+</script>
