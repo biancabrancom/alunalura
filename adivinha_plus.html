@@ -1,25 +1,40 @@
 <meta charset="UTF-8">
-<h2>Adivinha</h2>
+<head>
+    <h2>Adivinhe o número!</h2>
+</head>
+<body>
+    <input/>
+    <button>Tentar sorte</button>
 
-<input/>
-<button>Confirmar</button>
+    <script>
+        
+        var senhas = [5,7,10,2,3];
+        
+        var input = document.querySelector("input");
+        input.focus();
 
-<script>
-    var senha = Math.round(Math.random() * 10);
-    var input = document.querySelector("input");
-    input.focus();
+        function verifica() {
 
-    function verifica() {
-        if (input.value == senha) {
-            alert("Correto!");
-        } else {
-            alert("Incorreto.");
+            var achou = false;
+            
+            for (var posicao = 0; posicao < senhas.length; posicao++) {
+
+                if (input.value == senhas[posicao]) {
+                alert("Parabéns! Já pode jogar na loteria xD");
+                achou = true;
+                break;
+                } 
+            }
+
+            if (achou == false) {
+                alert("Errou, tente novamente.");
+            }
+            
+            input.value = "";
         }
 
-        input.value = "";
-    }
+        var button = document.querySelector("button");
+        button.onclick = verifica;
 
-    var button = document.querySelector("button");
-    button.onclick = verifica;
-
-</script>
+    </script>
+</body>

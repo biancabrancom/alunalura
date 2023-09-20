@@ -1,30 +1,31 @@
-<meta charset="UTF-8">
-<h2>IMC</h2>
-<script>
-    function pulaLinha() {
-        document.write("<br>");
-        document.write("<br>");
-    }
-
-    function mostra(frase) {
-        document.write(frase);
-        pulaLinha();
-    }
-
-    function calcImc(altura, peso) {
-        return peso / (altura * altura);
-    }
-
-    alert("Bem vindo à Calculadora de IMC!");
-    var nome = prompt("Digite seu nome");
-    alert("Olá " + nome + "! Vamos descobrir seu IMC.");
-
-    var alturaInf = prompt("Primeiro, informe sua altura.");
-    var pesoInf = prompt("Agora, informe seu peso.");
-
-    var imc = calcImc(alturaInf, pesoInf);
-
-    alert(nome + ", seu IMC é " + imc);
-    document.write(nome + ", seu IMC é " + imc);
+<canvas width="600", height="400">
     
+</canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'white';
+    pincel.fillRect(0, 0, 600, 400);
+
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = 'orange';
+    pincel.fillRect(400, 0, 200, 400);
+
+    pincel.fillStyle = 'lightgrey';
+    pincel.beginPath();
+    pincel.moveTo(300, 200);
+    pincel.lineTo(200, 400);
+    pincel.lineTo(400, 400);
+    pincel.fill();
+
+    pincel.fillStyle = 'purple';
+    pincel.beginPath();
+    pincel.arc(300, 200, 50, 0, 2 * 3.14);
+    pincel.fill();
+
 </script>
